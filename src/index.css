@@ -32,24 +32,51 @@ nav a {
   margin: 0 1rem;
 }
 
+
+select {
+  margin: 0.5rem 0;
+    padding: 0.5rem 1em;
+    color: #000;
+    border-radius: 4px;
+    width: 100%;
+    outline: none;
+}
+
+.postbtn {
+  width: 50%;
+  background-color: #fff;
+}
+.newblog {
+  text-align: center;
+  align-items: center;
+  background-color: #8bb2bf;
+}
+
+.serach-bar {
+  width: 50%;
+}
+
+.serach-ic {
+  justify-content: center;
+}
 form {
   display: flex;
     flex-direction: column;
     max-width: 400px;
     margin: auto;
-    background: #66778600;
     padding: 1rem;
     border-radius: 8px;
 }
 
 input, textarea {
-  margin: 0.5rem 0;
-  padding: 0.5rem;
-  resize: vertical;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  width: 50%;
-  height: 1.5em;
+  margin: 0.25rem 0;
+    padding: 0.8rem 1em;
+    resize: vertical;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 90%;
+    height: 1.5em;
+    outline: none;
 }
 @media screen and (max-width: 794px) {
   input, textarea {
@@ -81,12 +108,13 @@ button:hover {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-search-bar {
+.search-bar {
   display: block;
   width: 300px;
   padding: 0.5rem;
   border: 1px solid #ddd;
   border-radius: 6px;
+  width: 45%;
 }
 
 .comment {
@@ -301,10 +329,10 @@ search-bar {
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: var(--sidebar-bg);
+  background-color: #d8e6f7;
   overflow-x: hidden;
   transition: 0.09s;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 11px 1px 15px rgba(0, 0, 0, 0.1);
   white-space: nowrap;
 }
 
@@ -393,11 +421,10 @@ search-bar {
 }
 
 @media screen and (max-width: 1200px) {
-  .sidebar {
-    width: 0px;
-    background-color:  #6D7E8D;
-    color: #fff;
-  }
+    .sidebar {
+        width: 0px;
+        background-color: #d3e1f2;
+    }
   .sidebar.open .sidebar-header .toggle-btn > * {
     color: #000;
   }
@@ -776,9 +803,6 @@ background: linear-gradient(to bottom, #ef473a, #cb2d3e);
   padding-top: 0.8em;
 }
 
-.auth-form_footer > * {
-  color: #fff !important
-}
 .auth-container {
   width: 100%;
   align-items: center;
@@ -789,15 +813,14 @@ background: linear-gradient(to bottom, #ef473a, #cb2d3e);
 .auth-card {
   border-radius: 10px;
     width: 400px;
-    height: 400px;
-    background-color: #466376;
+    background-color: #d8e6f7;
     padding: 10px 30px;
 }
 
 .auth-card_title {
   text-align: center;
-  padding: 10px;
-  color: #e2e2e2;
+    padding: 10px;
+    color: #050505;
 }
 
 .auth-card_title h1 {
@@ -807,13 +830,13 @@ background: linear-gradient(to bottom, #ef473a, #cb2d3e);
 
 .auth-form input {
   margin: 10px 0;
-  width: 100%;
-  background-color: #e2e2e2;
-  border: none;
-  text-align: left;
-  outline: none;
-  padding: 12px 0px 5px 12px;
-  border-radius: 4px;
+    width: 100%;
+    background-color: #e8f0fe;
+    border: none;
+    text-align: left;
+    outline: none;
+    padding: 12px 0px 5px 12px;
+    border-radius: 4px;
 }
 
 .auth-form button {
@@ -829,8 +852,8 @@ background: linear-gradient(to bottom, #ef473a, #cb2d3e);
 
 
 .auth-card a {
-  color: #f5f6f8;
-  text-decoration: underline;
+  color: #050505;
+    text-decoration: underline;
 }
 .splash-text{
   font-size: 1.5rem;
