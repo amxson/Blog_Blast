@@ -8,6 +8,8 @@ import Signup from './components/Auth/Signup';
 import Navbar from './components/Common/Navbar';
 import Footer from './components/Common/Footer';
 import Splash from './pages/splash';
+import ChatBotComponent from './components/Common/ChatBotComponent';
+import { BlogProvider } from './components/context/blogcontext';
 import { getCurrentUser } from './utils/authentic';
 
 const App = () => {
@@ -15,67 +17,70 @@ const App = () => {
 
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={
-          currentUser ? (
-            <>
-              <Navbar />
-              <div className="main-content">
-                <Home />
-              </div>
-              <Footer />
-            </>
-          ) : (
-            <Navigate to="/splash" replace />
-          )
-        } />
-        <Route path="/Splash" element={
-          currentUser ? (
-            <Navigate to="/" replace />
-          ) : (
-            <Splash />
-          )
-        } />
-        <Route path="/login" element={
-          currentUser ? (
-            <Navigate to="/" replace />
-          ) : (
-            <>
-              <Navbar />
-              <div className="main-content">
-                <Login />
-              </div>
-              <Footer />
-            </>
-          )
-        } />
-        <Route path="/signup" element={
-          currentUser ? (
-            <Navigate to="/" replace />
-          ) : (
-            <>
-              <Navbar />
-              <div className="main-content">
-                <Signup />
-              </div>
-              <Footer />
-            </>
-          )
-        } />
-        <Route path="/newblog" element={
-          currentUser ? (
-            <>
-              <Navbar />
-              <div className="main-content">
-                <Blogg />
-              </div>
-              <Footer />
-            </>
-          ) : (
-            <Navigate to="/splash" replace />
-          )
-        } />
-      </Routes>
+      <BlogProvider>
+        <Routes>
+          <Route path="/" element={
+            currentUser ? (
+              <>
+                <Navbar />
+                <div className="main-content">
+                  <Home />
+                  <ChatBotComponent />
+                </div>
+                <Footer />
+              </>
+            ) : (
+              <Navigate to="/splash" replace />
+            )
+          } />
+          <Route path="/Splash" element={
+            currentUser ? (
+              <Navigate to="/" replace />
+            ) : (
+              <Splash />
+            )
+          } />
+          <Route path="/login" element={
+            currentUser ? (
+              <Navigate to="/" replace />
+            ) : (
+              <>
+                <Navbar />
+                <div className="main-content">
+                  <Login />
+                </div>
+                <Footer />
+              </>
+            )
+          } />
+          <Route path="/signup" element={
+            currentUser ? (
+              <Navigate to="/" replace />
+            ) : (
+              <>
+                <Navbar />
+                <div className="main-content">
+                  <Signup />
+                </div>
+                <Footer />
+              </>
+            )
+          } />
+          <Route path="/newblog" element={
+            currentUser ? (
+              <>
+                <Navbar />
+                <div className="main-content">
+                  <Blogg />
+                </div>
+                <Footer />
+              </>
+            ) : (
+              <Navigate to="/splash" replace />
+            )
+          } />
+        </Routes>
+      </BlogProvider>
     </Router>
   );
 };
