@@ -1,7 +1,6 @@
 
 
 const Footer = () => {
-  console.log("FUT")
   return (
     <footer className="footer">
       <div className="container">
@@ -18,4 +17,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
