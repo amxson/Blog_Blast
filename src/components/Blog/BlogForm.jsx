@@ -69,7 +69,7 @@ const BlogForm = ({ addBlog, editBlog, blog }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className='newblog'>
       <h2>{blog ? 'Edit Blog Post' : 'Create a New Blog Post'}</h2>
       <input
         type="text"
@@ -87,7 +87,6 @@ const BlogForm = ({ addBlog, editBlog, blog }) => {
       ></textarea>
 
       <div>
-        <label htmlFor="category">Select a category:</label>
         <select id="category" value={selectedCategory?.id || ''} onChange={handleCategoryChange}>
           <option value="">Select a category</option>
           {categories.map((category) => (
@@ -98,7 +97,7 @@ const BlogForm = ({ addBlog, editBlog, blog }) => {
         </select>
       </div>
 
-      <button type="submit" disabled={!selectedCategory}>
+      <button className='postbtn' type="submit" disabled={!selectedCategory}>
         {blog ? 'Update' : 'Post'}
       </button>
     </form>
