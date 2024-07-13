@@ -913,6 +913,10 @@ background: linear-gradient(to bottom, #ef473a, #cb2d3e);
     padding-top: 17px;
 }
 
+.chatbot-box.show iframe {
+  pointer-events: all;
+}
+
 .chatbot-iframe {
   width: 100%;
     border: none;
