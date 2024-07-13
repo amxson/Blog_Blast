@@ -34,13 +34,12 @@ nav a {
 
 form {
   display: flex;
-  flex-direction: column;
-  max-width: 400px;
-  margin: auto;
-  background: #667786;
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    max-width: 400px;
+    margin: auto;
+    background: #66778600;
+    padding: 1rem;
+    border-radius: 8px;
 }
 
 input, textarea {
@@ -789,16 +788,16 @@ background: linear-gradient(to bottom, #ef473a, #cb2d3e);
 
 .auth-card {
   border-radius: 10px;
-  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3);
-  width: 400px;
-  height: 400px;
-  background-color: var(--sidebar-bg);
-  padding: 10px 30px;
+    width: 400px;
+    height: 400px;
+    background-color: #466376;
+    padding: 10px 30px;
 }
 
 .auth-card_title {
   text-align: center;
   padding: 10px;
+  color: #e2e2e2;
 }
 
 .auth-card_title h1 {
@@ -808,12 +807,13 @@ background: linear-gradient(to bottom, #ef473a, #cb2d3e);
 
 .auth-form input {
   margin: 10px 0;
-    width: 100%;
-    background-color: #e2e2e2;
-    border: none;
-    outline: none;
-    padding: 12px 5px 12px 2px;
-    border-radius: 4px;
+  width: 100%;
+  background-color: #e2e2e2;
+  border: none;
+  text-align: left;
+  outline: none;
+  padding: 12px 0px 5px 12px;
+  border-radius: 4px;
 }
 
 .auth-form button {
