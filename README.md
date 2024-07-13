@@ -23,3 +23,4 @@ Blogverse is a sample blog application built with React and Vite. It allows user
 - **JavaScript (ES6+)**: The main programming language used
 - **CSS**: For styling the application
 
+
