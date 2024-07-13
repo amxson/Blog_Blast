@@ -49,7 +49,7 @@ select {
 .newblog {
   text-align: center;
   align-items: center;
-  background-color: #8bb2bf;
+  background-color: #d3e1f2;
 }
 
 .serach-bar {
@@ -203,6 +203,7 @@ button:hover {
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 1rem;
+  width: 80%
 }
 
 .max textarea {
@@ -221,6 +222,9 @@ button:hover {
   position: relative;
   bottom: 0;
   width: 100%;
+  background-image: url(/public/background.jpg);
+    background-blend-mode: overlay;
+    background-color: #4d4c4c;
 }
 
 .footer a {
@@ -338,11 +342,11 @@ button:hover {
 
 .homee {
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  margin-left: 2em;
-  margin-top: 2em;
-  cursor: pointer;
+    align-items: center;
+    gap: 0.4em;
+    justify-content: flex-start;
+    margin-left: 2em;
+    cursor: pointer;
 }
 .homee:hover{
   color: var(--primary-color);
@@ -350,10 +354,10 @@ button:hover {
 
 
 .catee {
-  padding-left: 1.7em;
-  padding-top: 1em;
+  padding-left: 0.7em;
   font-size: large;
-  box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid;
+  line-height: 3em;
 }
 
 .sidebar.open {
@@ -486,9 +490,9 @@ button:hover {
 
 .card-title {
   font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 10px;
-  color: white;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #000;
 }
 
 .card-text {
@@ -517,11 +521,12 @@ button:hover {
 
 .form-control {
   width: 100%;
-  padding: 15px;
+  height: 127px;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
   resize: none;
+  font-size: 16px;
 }
 
 .btn {
@@ -675,7 +680,7 @@ button:hover {
   overflow: hidden;
   box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 0.1);
   border-radius: 1em;
-  background: #3c5b76;
+  background-color: #d8e6f7;
 
 }
 
@@ -795,6 +800,7 @@ background: linear-gradient(to bottom, #ef473a, #cb2d3e);
   padding-left: 1em;
     padding-right: 1rem;
     margin: 5em auto;
+  min-height: 100vh;
 }
 
 .auth-form_footer {
@@ -877,18 +883,20 @@ background: linear-gradient(to bottom, #ef473a, #cb2d3e);
 
 .chatbot-circle {
   position: absolute;
-  background: #5a5eb9;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  color: white;
-  padding: 16px;
-  cursor: pointer;
-  transition: transform 0.3s ease;
+    background: #d8e6f7;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: white;
+    color: #000;
+    padding: 16px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
 .chatbot-circle:hover {
   transform: scale(1.1);
+  background-color: #d8e6f7;
 }
 
 .chatbot-overlay {
@@ -928,14 +936,14 @@ background: linear-gradient(to bottom, #ef473a, #cb2d3e);
 }
 
 .chatbot-header {
-  background: #5a5eb9;
+  background: #d8e6f7;
     height: 2em;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-    color: white;
-    text-align: center;
     font-size: 20px;
+    text-align: center;
     padding-top: 17px;
+    box-shadow: -14px -7px 15px rgba(0, 0, 0, 0.1)
 }
 
 .chatbot-box.show iframe {
