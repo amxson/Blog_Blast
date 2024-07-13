@@ -608,8 +608,9 @@ search-bar {
 
 .splash-logo {
   font-size: 3rem;
-  font-weight: bold;
-  margin-bottom: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-align: center;
 }
 
 .splash-buttons {
@@ -832,7 +833,8 @@ background: linear-gradient(to bottom, #ef473a, #cb2d3e);
   text-decoration: underline;
 }
 .splash-text{
-  font-size: 2rem;
+  font-size: 1.5rem;
+    text-align: center;
 }
 
 .chatbot-circle {
