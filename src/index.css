@@ -9,9 +9,7 @@
 }
 
 
-* {
-  transition: 0.5s ease-in;
-}
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -919,6 +917,7 @@ background: linear-gradient(to bottom, #ef473a, #cb2d3e);
   width: 100%;
     border: none;
     height: 27em;
+    pointer-events: none;
 }
 
 @media only screen and (max-width: 500px) {
