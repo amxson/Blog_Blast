@@ -34,9 +34,9 @@ const ChatBotComponent = ({ url }) => {
   useEffect(() => {
     if (iframeLoaded) {
       const iframeWindow = iframeRef.current.contentWindow;
-      const currentUser = localStorage.getItem('currentUser');
+      const currentUser = JSON.parse(localStorage.getItem('currentUser'));
       if (currentUser) {
-        iframeWindow.postMessage({ type: 'setUser', user: currentUser }, 'https://mychatt.streamlit.app');
+        iframeWindow.postMessage({ type: 'setUser', user: currentUser.name }, 'https://mychatt.streamlit.app');
       }
     }
   }, [iframeLoaded]);
