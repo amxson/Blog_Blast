@@ -19,7 +19,7 @@ const ChatBotComponent = ({ url }) => {
 
   useEffect(() => {
     const handleMessage = (event) => {
-      if (event.origin !== 'https://mychatt.streamlit.app') return; // Validate the origin
+      if (event.origin !== 'https://mychatt.streamlit.app?embed=true') return; // Validate the origin
       console.log('Message received from iframe:', event.data);
     };
 
@@ -35,7 +35,7 @@ const ChatBotComponent = ({ url }) => {
       const iframeWindow = iframeRef.current.contentWindow;
       const currentUser = localStorage.getItem('currentUser');
       if (currentUser) {
-        iframeWindow.postMessage({ type: 'setUser', user: currentUser }, 'https://mychatt.streamlit.app');
+        iframeWindow.postMessage({ type: 'setUser', user: currentUser }, 'https://mychatt.streamlit.app?embed=true');
       }
     }
   }, [iframeLoaded]);
