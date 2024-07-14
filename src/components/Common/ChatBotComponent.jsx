@@ -19,7 +19,6 @@ const ChatBotComponent = ({ url }) => {
 
   useEffect(() => {
     const handleMessage = (event) => {
-      if (event.origin !== 'https://mychatt.streamlit.app') return; // Validate the origin
       console.log('Message received from iframe:', event.data);
     };
 
