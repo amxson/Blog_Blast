@@ -242,9 +242,6 @@ button:hover {
   position: relative;
   bottom: 0;
   width: 100%;
-  background-image: url(/public/background.jpg);
-  background-blend-mode: overlay;
-  background-color: #4d4c4c;
 }
 
 .footer a {

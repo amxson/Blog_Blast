@@ -18,7 +18,9 @@ const BlogForm = ({ addBlog, editBlog, blog }) => {
   const [title, setTitle] = useState(blog?.title || '');
   const [content, setContent] = useState(blog?.content || '');
   const navigate = useNavigate();
-  const [selectedCategory, setSelectedCategory] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState(
+    blog?.category || { id: 6, name: 'uncategorized' }
+  ); // Default to 'uncategorized'
 
   const categories = [
     { id: 1, name: 'Art' },
@@ -26,13 +28,13 @@ const BlogForm = ({ addBlog, editBlog, blog }) => {
     { id: 3, name: 'Fitness' },
     { id: 4, name: 'Food' },
     { id: 5, name: 'Music' },
-    { id: 6, name: 'sss' },
+    { id: 6, name: 'uncategorized' },
   ];
 
   const handleCategoryChange = (event) => {
     const selectedCategoryId = event.target.value;
     const selectedCategory = categories.find((category) => category.id.toString() === selectedCategoryId);
-    setSelectedCategory(selectedCategory);
+    setSelectedCategory(selectedCategory || { id: 6, name: 'uncategorized' }); // Fallback to 'uncategorized'
   };
 
   const handleSubmit = (e) => {
@@ -62,10 +64,10 @@ const BlogForm = ({ addBlog, editBlog, blog }) => {
     }
     setTitle('');
     setContent('');
-    setSelectedCategory('');
+    setSelectedCategory({ id: 6, name: 'uncategorized' }); // Reset to 'uncategorized'
     console.log(getLS());
     navigate('/');
-    window.location.reload()
+    window.location.reload();
   };
 
   return (
@@ -88,12 +90,14 @@ const BlogForm = ({ addBlog, editBlog, blog }) => {
 
       <div>
         <select id="category" value={selectedCategory?.id || ''} onChange={handleCategoryChange}>
-          <option value="">Select a category</option>
-          {categories.map((category) => (
-            <option key={category.id} value={category.id}>
-              {category.name}
-            </option>
-          ))}
+          <option value="6">Uncategorized</option>
+          {categories
+            .filter((category) => category.id !== 6) // Exclude 'uncategorized' from the options list
+            .map((category) => (
+              <option key={category.id} value={category.id}>
+                {category.name}
+              </option>
+            ))}
         </select>
       </div>
 
