@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCommentAlt, faTimes } from '@fortawesome/free-solid-svg-icons';
-import Iframe from '../Iframe';
 
 const ChatBotComponent = ({ url }) => {
   const [showChat, setShowChat] = useState(false);
@@ -27,10 +26,11 @@ const ChatBotComponent = ({ url }) => {
     }
   }, [showChat, iframeLoaded]);
 
-
   useEffect(() => {
     const handleMessage = (event) => {
+
       if (event.origin !== 'https://mychatt.streamlit.app?embed=true') return; // Validate the origin
+
       console.log('Message received from iframe:', event.data);
     };
 
@@ -40,6 +40,17 @@ const ChatBotComponent = ({ url }) => {
       window.removeEventListener('message', handleMessage);
     };
   }, []);
+
+  useEffect(() => {
+    if (iframeLoaded) {
+      const iframeWindow = iframeRef.current.contentWindow;
+      const currentUserString = localStorage.getItem('currentUser');
+      if (currentUserString) {
+        const currentUser = JSON.parse(currentUserString);
+        iframeWindow.postMessage({ type: 'setUser', user: currentUser.name }, 'https://mychatt.streamlit.app');
+      }
+    }
+  }, [iframeLoaded]);
 
   return (
     <div className={`chatbot-container ${showChat ? 'show' : ''}`}>
@@ -54,12 +65,13 @@ const ChatBotComponent = ({ url }) => {
             <FontAwesomeIcon icon={faTimes} />
           </span>
         </div>
-          <iframe
-            title="ChatBot"
-            src="https://mychatt.streamlit.app?embed=true"
-            className="chatbot-iframe"
-            ref={iframeRef}
-          />
+        <iframe
+          title="ChatBot"
+          src="https://mychatt.streamlit.app?embed=true"
+          className="chatbot-iframe"
+          ref={iframeRef}
+          onLoad={() => setIframeLoaded(true)}
+        />
       </div>
     </div>
   );
