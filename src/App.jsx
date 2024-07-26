@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Home from './pages/Home';
 import Blog from './pages/Blog';
@@ -11,10 +11,10 @@ import Splash from './pages/splash';
 import ChatBotComponent from './components/Common/ChatBotComponent';
 import { BlogProvider } from './components/context/blogcontext';
 import { getCurrentUser } from './utils/authentic';
+import { useRef } from 'react';
 
 const App = () => {
   const currentUser = getCurrentUser();
-
   return (
     <Router>
       <BlogProvider>

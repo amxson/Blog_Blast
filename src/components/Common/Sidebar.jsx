@@ -10,7 +10,7 @@ const categories = [
   { id: 3, name: 'Fitness', icon: faRunning },
   { id: 4, name: 'Food', icon: faUtensils },
   { id: 5, name: 'Music', icon: faMusic },
-  { id: 6, name: 'sss', icon: faQuestion },
+  { id: 6, name: 'uncategorized', icon: faQuestion },
 ];
 
 const Sidebar = () => {
