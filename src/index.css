@@ -657,7 +657,7 @@ button:hover {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-image: url('./public/background.jpg');
+  background-image: url('/background.jpg');
   color: #fff;
   font-family: 'Montserrat', sans-serif;
 }

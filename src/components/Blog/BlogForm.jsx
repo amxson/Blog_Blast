@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { v4 as uuidv4 } from 'uuid';
+
 import { getCurrentUser } from '../../utils/authentic';
 import { useNavigate } from 'react-router-dom';
 
@@ -47,7 +47,7 @@ const BlogForm = ({ addBlog, editBlog, blog }) => {
     }
 
     const newBlog = {
-      id: blog?.id || uuidv4(),
+      id: blog?.id || crypto.randomUUID(),
       title,
       content,
       likes: 0,
